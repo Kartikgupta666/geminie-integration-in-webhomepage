@@ -15,7 +15,7 @@ function App() {
     setChat([...chat, { type: 'user', text: message }])
     setMessage('')
 
-    await axios.post("http://localhost:8000/", {
+    await axios.post("https://geminie-integration-in-webhomepage.onrender.com/", {
       message: message,
       apikey: localStorage.getItem('apikey')
 
