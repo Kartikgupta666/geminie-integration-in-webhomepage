@@ -13,7 +13,7 @@ function App() {
   const send = async (e) => {
     e.preventDefault()
     setChat([...chat, { type: 'user', text: message }])
-    setMessage('')
+    setMessage("")
 
     await axios.post("https://geminie-integration-in-webhomepage.onrender.com/", {
       message: message,
@@ -52,7 +52,7 @@ function App() {
             <SetAPI />
 
             {/* <!-- Dynamic Chat Messages --> */}
-            <div class="space-y-4">
+            <div className="space-y-px">
               {chat.map((entry, index) => (
                 entry.type === 'user' ?
                   <Userchat key={index} command={entry.text} /> :
@@ -62,8 +62,8 @@ function App() {
           </div>
 
           {/* <!-- Chatbox --> */}
-          <div class="p-4 bg-white shadow fixed bottom-16 w-full flex">
-            <input type="text" class="flex-grow border rounded p-2 mr-2" placeholder="Type your message..." onChange={e =>{setMessage(e.target.value)}} />
+          <div class="p-4 bg-white shadow fixed bottom-0 w-full flex">
+            <input type="text" class="flex-grow border rounded p-2 mr-2" placeholder="Type your message..." value={message} onChange={e =>{setMessage(e.target.value)}} />
             <button class="bg-blue-600 text-white p-2 rounded" onClick={send}>Send</button>
           </div>
         </main>
