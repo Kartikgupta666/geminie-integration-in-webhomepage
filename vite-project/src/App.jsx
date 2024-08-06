@@ -64,7 +64,7 @@ function App() {
           {/* <!-- Chatbox --> */}
           <div class="p-4 bg-white shadow fixed bottom-0 w-full flex">
             <input type="text" class="flex-grow border rounded p-2 mr-2" placeholder="Type your message..." value={message} onChange={e =>{setMessage(e.target.value)}} />
-            <button class="bg-blue-600 text-white p-2 rounded" onClick={send}>Send</button>
+            <button class="bg-blue-600 text-white p-2 rounded" onClick={send}><i class="fas fa-paper-plane px-2"></i></button>
           </div>
         </main>
       </div>
